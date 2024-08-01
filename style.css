@@ -1,0 +1,136 @@
+/* CSS RESET */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CUSTOM PROPERTIES  */
+:root {
+  --primary-dark-cyan: hsl(158, 36%, 37%);
+  --primary-darker-cyan: hsl(157, 38%, 28%);
+  --primary-cream: hsl(30, 38%, 92%);
+
+  --neutral-very-dark-blue: hsl(212, 21%, 14%);
+  --neutral-greyish-blue: hsl(228, 12%, 48%);
+
+  --neutral-white: hsl(0, 0%, 100%);
+
+  --ff-montserrat: "Montserrat", sans-serif;
+  --ff-Fraunces: "Fraunces", sans-serif;
+}
+
+/* base style */
+body {
+  font-family: var(--ff-montserrat);
+  color: var(--neutral-very-dark-blue);
+  height: 100vh;
+  background-color: var(--primary-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  max-width: 700px;
+  min-height: 500px;
+  border-radius: 10px;
+  background-color: var(--neutral-white);
+  overflow: hidden;
+}
+.image {
+  flex: 1;
+  background-image: url(images/image-product-desktop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.first-heading {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 5px;
+  opacity: 0.7;
+  font-weight: 400;
+  color: var(--neutral-very-dark-blue);
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.second-heading {
+  font-family: var(--ff-Fraunces);
+  max-width: 200px;
+}
+.paragraph {
+  max-width: 550px;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+.price-section {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.current-price {
+  font-family: var(--ff-Fraunces);
+  color: var(--primary-dark-cyan);
+}
+.old-price {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+.cart-button {
+  border: none;
+  width: 95%;
+  padding: 17px;
+  background-color: var(--primary-dark-cyan);
+  color: white;
+  font-weight: 600;
+  border-radius: 7px;
+}
+
+.cart-icon {
+  margin-right: 10px;
+}
+.cart-button:hover {
+  background-color: var(--primary-darker-cyan);
+  cursor: pointer;
+}
+
+@media (max-width: 415px) {
+  body {
+    height: 100%;
+    padding: 60px 15px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .image {
+    flex: none;
+    height: 300px;
+  }
+  .content {
+    flex: none;
+    padding: 20px 20px;
+  }
+  .second-heading {
+    max-width: none;
+  }
+  .paragraph {
+    max-width: none;
+  }
+}
